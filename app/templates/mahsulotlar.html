@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexora Market - Mahsulotlar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header>
+  <div class="container topbar">
+    <div class="brand">
+      <a href="index.html"><img src="{% static 'images/logo.svg' %}" alt="Nexora"></a>
+    </div>
+    <label class="searchbar"><i class="fa-solid fa-magnifying-glass"></i><input placeholder="Mahsulot, brend yoki kategoriya qidiring"></label>
+    <div class="header-actions">
+      <a class="icon-btn" href="login.html" title="Kabinet"><i class="fa-regular fa-user"></i></a>
+      <a class="icon-btn" href="savatcha.html" title="Savatcha"><i class="fa-solid fa-bag-shopping"></i></a>
+      <div class="icon-btn mobile-toggle" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></div>
+    </div>
+  </div>
+  <div class="container nav-row" id="nav-row">
+    <nav class="nav-links">
+      <a href="{% url 'index' %}" class="active">Bosh sahifa</a>
+      <a href="{% url 'mahsulotlar' %}">Mahsulotlar</a>
+      <a href="{% url 'blog' %}">Blog</a>
+      <a href="{% url 'biz-haqimizda' %}">Biz haqimizda</a>
+      <a href="{% url 'aloqa' %}">Aloqa</a>
+    </nav>
+    <div class="tag"><i class="fa-solid fa-bolt"></i> Tez tanlov</div>
+  </div>
+</header>
+
+<main class="page-section">
+  <div class="container">
+    <section class="catalog-hero">
+      <div class="eyebrow">Shop / catalog</div>
+      <h1 style="margin:8px 0 12px;font-size:clamp(2rem,4vw,3.5rem)">Mahsulotlar katalogi</h1>
+      <p class="muted" style="max-width:62ch">Bu sahifa endi original marketplace’ga yaqinroq ishlaydi: yuqorida tez filterlar, chap tomonda soddaroq filterlar va o‘ng tomonda klassik product grid. Dizayn esa avvalgidek Nexora brendi bilan qolgan.</p>
+      <div class="quick-cats"><a class="active" href="#">Barchasi</a><a href="#">Smartfonlar</a><a href="#">Noutbuklar</a><a href="#">Audio</a><a href="#">Uy uchun</a><a href="#">Aksiyalar</a></div>
+    </section>
+
+    <section class="shop-layout-lite">
+      <aside>
+        <div class="filter-card">
+          <h3 style="margin:0 0 8px">Saralash</h3>
+          <p class="muted" style="margin:0">Tez topish uchun mashhur bo'limlar.</p>
+          <div class="filter-stack">
+            <div class="filter-pill"><span>Chegirma</span><strong>128</strong></div>
+            <div class="filter-pill"><span>Yangi kelganlar</span><strong>57</strong></div>
+            <div class="filter-pill"><span>Premium</span><strong>43</strong></div>
+            <div class="filter-pill"><span>Top rated</span><strong>88</strong></div>
+          </div>
+        </div>
+      </aside>
+      <div>
+        <div class="mini-banner">
+          <div>
+            <h3>Hafta aksiyasi</h3>
+            <p class="muted" style="margin:0">Flagman qurilmalarga maxsus narxlar va qulay muddatli to'lov.</p>
+          </div>
+          <a class="btn btn-accent" href="checkout.html">Hoziroq olish</a>
+        </div>
+        <div class="product-grid classic">
+          <article class="product-card"><span class="badge">Aksiya</span><div class="product-thumb"><img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=900&q=80" alt="Apple iPhone 15 Pro"></div><div class="product-body"><div class="product-category">Smartfonlar</div><h3 class="product-title"><a href="mahsulot-detail.html">Apple iPhone 15 Pro</a></h3><div class="rating-row"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span class="muted">4.8 reyting</span></div><div><div class="old-price">13 299 000 so'm</div><div class="price">12 499 000 so'm</div></div><div class="product-actions"><a href="mahsulot-detail.html" class="btn btn-outline" style="flex:1">Batafsil</a><a href="savatcha.html" class="icon-cart-btn" data-add-cart><i class="fa-solid fa-cart-plus"></i></a></div></div></article>
+          <article class="product-card"><span class="badge">Yangi</span><div class="product-thumb"><img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=900&q=80" alt="Samsung Galaxy S24"></div><div class="product-body"><div class="product-category">Smartfonlar</div><h3 class="product-title"><a href="mahsulot-detail.html">Samsung Galaxy S24</a></h3><div class="rating-row"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="muted">4.7 reyting</span></div><div class="price">10 899 000 so'm</div><div class="product-actions"><a href="mahsulot-detail.html" class="btn btn-outline" style="flex:1">Batafsil</a><a href="savatcha.html" class="icon-cart-btn" data-add-cart><i class="fa-solid fa-cart-plus"></i></a></div></div></article>
+          <article class="product-card"><span class="badge">TOP</span><div class="product-thumb"><img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=900&q=80" alt="MacBook Air M3"></div><div class="product-body"><div class="product-category">Noutbuklar</div><h3 class="product-title"><a href="mahsulot-detail.html">MacBook Air M3</a></h3><div class="rating-row"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="muted">4.9 reyting</span></div><div><div class="old-price">16 400 000 so'm</div><div class="price">15 899 000 so'm</div></div><div class="product-actions"><a href="mahsulot-detail.html" class="btn btn-outline" style="flex:1">Batafsil</a><a href="savatcha.html" class="icon-cart-btn" data-add-cart><i class="fa-solid fa-cart-plus"></i></a></div></div></article>
+          <article class="product-card"><span class="badge">Chegirma</span><div class="product-thumb"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80" alt="Sony WH-1000XM5"></div><div class="product-body"><div class="product-category">Audio texnika</div><h3 class="product-title"><a href="mahsulot-detail.html">Sony WH-1000XM5</a></h3><div class="rating-row"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="muted">4.5 reyting</span></div><div><div class="old-price">4 699 000 so'm</div><div class="price">4 199 000 so'm</div></div><div class="product-actions"><a href="mahsulot-detail.html" class="btn btn-outline" style="flex:1">Batafsil</a><a href="savatcha.html" class="icon-cart-btn" data-add-cart><i class="fa-solid fa-cart-plus"></i></a></div></div></article>
+          <article class="product-card"><span class="badge">House</span><div class="product-thumb"><img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?auto=format&fit=crop&w=900&q=80" alt="Dyson V15 Detect"></div><div class="product-body"><div class="product-category">Uy uchun</div><h3 class="product-title"><a href="mahsulot-detail.html">Dyson V15 Detect</a></h3><div class="rating-row"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="muted">4.4 reyting</span></div><div><div class="old-price">9 200 000 so'm</div><div class="price">8 699 000 so'm</div></div><div class="product-actions"><a href="mahsulot-detail.html" class="btn btn-outline" style="flex:1">Batafsil</a><a href="savatcha.html" class="icon-cart-btn" data-add-cart><i class="fa-solid fa-cart-plus"></i></a></div></div></article>
+          <article class="product-card"><span class="badge">Fresh</span><div class="product-thumb"><img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=900&q=80" alt="Apple Watch Series 9"></div><div class="product-body"><div class="product-category">Aqlli soatlar</div><h3 class="product-title"><a href="mahsulot-detail.html">Apple Watch Series 9</a></h3><div class="rating-row"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="muted">4.9 reyting</span></div><div class="price">5 299 000 so'm</div><div class="product-actions"><a href="mahsulot-detail.html" class="btn btn-outline" style="flex:1">Batafsil</a><a href="savatcha.html" class="icon-cart-btn" data-add-cart><i class="fa-solid fa-cart-plus"></i></a></div></div></article>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-shell">
+      <div>
+        <img src="{% static 'images/logo.svg' %}" alt="Nexora" style="height:38px;filter:brightness(0) invert(1)">
+        <p style="line-height:1.8;color:#cbd5e1;max-width:34ch">Nexora — zamonaviy online shopping uchun kuratsiya qilingan marketplace. Premium texnika, uy uchun buyumlar va kundalik essentials bitta joyda.</p>
+      </div>
+      <div>
+        <h4>Sahifalar</h4>
+        <div class="footer-links"><a href="mahsulotlar.html">Mahsulotlar</a><a href="blog.html">Blog</a><a href="biz-haqimizda.html">Biz haqimizda</a></div>
+      </div>
+      <div>
+        <h4>Xizmatlar</h4>
+        <div class="footer-links"><a href="savatcha.html">Savatcha</a><a href="checkout.html">Checkout</a><a href="aloqa.html">Aloqa</a></div>
+      </div>
+      <div>
+        <h4>Yangiliklar</h4>
+        <p style="color:#cbd5e1">Chegirmalar va yangi drop'lar haqida xabardor bo'ling.</p>
+        <div class="searchbar" style="display:flex;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)"><input placeholder="Email" style="color:white"><button class="btn btn-accent">Obuna</button></div>
+      </div>
+    </div>
+    <div class="footer-note">© 2026 Nexora Market. Barcha huquqlar himoyalangan.</div>
+  </div>
+</footer>
+<div id="toast-container" class="toast-container"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+<script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>

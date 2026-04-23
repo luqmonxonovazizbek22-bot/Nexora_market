@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexora Market - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+    <div class="container topbar">
+        <div class="brand">
+            <a href="{% url 'index' %}">
+                <img src="{% static 'images/logo.svg' %}" alt="Nexora">
+            </a>
+        </div>
+    </div>
+</header>
+
+<main class="page-section">
+    <div class="center-narrow">
+        <section class="auth-shell">
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+
+                <div class="auth-side">
+                    <h1>Xush kelibsiz</h1>
+                    <p>Tizimga kiring</p>
+                </div>
+
+                <div class="auth-form stack">
+                    <h2>Hisobingizga kiring</h2>
+
+                    <input class="input" type="email" name="username" placeholder="Email" required>
+
+                    <div class="stack" style="gap: 5px;">
+                        <input class="input" type="password" name="password" placeholder="Parol" required>
+                        <div style="text-align: right;">
+                            <a href="{% url 'forgot-password' %}" class="muted" style="font-size: 0.8rem; text-decoration: none; color: #666;">
+                                Parolni unutdingizmi?
+                            </a>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="margin-top: 10px;">
+                        Davom etish
+                    </button>
+
+                    <a class="muted" href="{% url 'register' %}" style="text-align: center; display: block; margin-top: 15px;">
+                        Ro'yxatdan o'tish
+                    </a>
+
+                    {% if form.errors or form.non_field_errors %}
+                        <div style="color: #ff4d4d; background: #fff5f5; padding: 10px; border-radius: 8px; font-size: 0.9rem; margin-top: 15px; border: 1px solid #ffcccc;">
+                            {{ form.non_field_errors }}
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <p><strong>{{ field.label }}:</strong> {{ error }}</p>
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </form>
+        </section>
+    </div>
+</main>
+
+</body>
+</html>

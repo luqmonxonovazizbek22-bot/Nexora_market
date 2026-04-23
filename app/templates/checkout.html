@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexora Market - Checkout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+  <div class="container topbar">
+    <div class="brand">
+      <a href="index.html"><img src="{% static 'images/logo.svg' %}" alt="Nexora"></a>
+    </div>
+    <label class="searchbar"><i class="fa-solid fa-magnifying-glass"></i><input placeholder="Mahsulot, brend yoki kategoriya qidiring"></label>
+    <div class="header-actions">
+      <a class="icon-btn" href="login.html" title="Kabinet"><i class="fa-regular fa-user"></i></a>
+      <a class="icon-btn" href="savatcha.html" title="Savatcha"><i class="fa-solid fa-bag-shopping"></i></a>
+      <div class="icon-btn mobile-toggle" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></div>
+    </div>
+  </div>
+  <div class="container nav-row" id="nav-row">
+    <nav class="nav-links">
+      <a href="{% url 'index' %}" class="active">Bosh sahifa</a>
+      <a href="{% url 'mahsulotlar' %}">Mahsulotlar</a>
+      <a href="{% url 'blog' %}">Blog</a>
+      <a href="{% url 'biz-haqimizda' %}">Biz haqimizda</a>
+      <a href="{% url 'aloqa' %}">Aloqa</a>
+    </nav>
+    <div class="tag"><i class="fa-solid fa-truck-fast"></i> 1 kunda yetkazish</div>
+  </div>
+</header>
+
+<main class="page-section">
+<div class="container stack">
+  <section class="page-hero"><div class="eyebrow">Checkout</div><h1 style="margin:8px 0 0;font-size:3rem">Buyurtmani rasmiylashtirish</h1><p class="muted">Kontakt, yetkazish va to‘lov bloklari alohida kartalarda joylashgan.</p></section>
+  <section class="checkout-layout">
+    <div class="stack">
+      <div class="panel"><h3 style="margin-top:0">Kontakt ma'lumotlari</h3><div class="form-grid"><input class="input" placeholder="Ism"><input class="input" placeholder="Familiya"><input class="input" placeholder="Telefon"><input class="input" placeholder="Email"></div></div>
+      <div class="panel"><h3 style="margin-top:0">Yetkazish</h3><div class="form-grid"><input class="input" placeholder="Shahar"><input class="input" placeholder="Tuman"><input class="input" placeholder="Manzil"><input class="input" placeholder="Uy / kvartira"></div><textarea placeholder="Izoh"></textarea></div>
+      <div class="panel"><h3 style="margin-top:0">To‘lov usuli</h3><div class="editorial-grid"><div class="story-card"><strong>Karta orqali</strong><p class="muted">UzCard, Humo, Visa, Mastercard</p></div><div class="story-card"><strong>Muddatli to'lov</strong><p class="muted">0% va qulay oylik to‘lovlar</p></div></div></div>
+    </div>
+    <aside class="checkout-panel">
+      <h3 style="margin-top:0">Order summary</h3>
+      <div class="summary-row"><span>2 ta mahsulot</span><strong>17 798 000 so'm</strong></div>
+      <div class="summary-row"><span>Xizmat</span><strong>0 so'm</strong></div>
+      <div class="summary-row"><span>Jami</span><strong>17 498 000 so'm</strong></div>
+      <div class="notice" style="margin:16px 0">Buyurtma tasdiqlangach operator siz bilan bog‘lanadi.</div>
+      <button class="btn btn-primary" style="width:100%">Buyurtmani tasdiqlash</button>
+    </aside>
+  </section>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-shell">
+      <div>
+        <img src="{% static 'images/logo.svg' %}" alt="Nexora" style="height:38px;filter:brightness(0) invert(1)">
+        <p style="line-height:1.8;color:#cbd5e1;max-width:34ch">Nexora — zamonaviy online shopping uchun kuratsiya qilingan marketplace. Premium texnika, uy uchun buyumlar va kundalik essentials bitta joyda.</p>
+      </div>
+      <div>
+        <h4>Sahifalar</h4>
+        <div class="footer-links"><a href="mahsulotlar.html">Mahsulotlar</a><a href="blog.html">Blog</a><a href="biz-haqimizda.html">Biz haqimizda</a></div>
+      </div>
+      <div>
+        <h4>Xizmatlar</h4>
+        <div class="footer-links"><a href="savatcha.html">Savatcha</a><a href="checkout.html">Checkout</a><a href="aloqa.html">Aloqa</a></div>
+      </div>
+      <div>
+        <h4>Yangiliklar</h4>
+        <p style="color:#cbd5e1">Chegirmalar va yangi drop'lar haqida xabardor bo'ling.</p>
+        <div class="searchbar" style="display:flex;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)"><input placeholder="Email" style="color:white"><button class="btn btn-accent">Obuna</button></div>
+      </div>
+    </div>
+    <div class="footer-note">© 2026 Nexora Market. Barcha huquqlar himoyalangan.</div>
+  </div>
+</footer>
+<div id="toast-container" class="toast-container"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+<script src="{% static 'js/app.js' %}"></script>
+
+</body>
+</html>

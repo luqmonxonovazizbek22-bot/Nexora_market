@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexora Market - Mahsulot detali</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+  <div class="container topbar">
+    <div class="brand">
+      <a href="index.html"><img src="{% static 'images/logo.svg' %}" alt="Nexora"></a>
+    </div>
+    <label class="searchbar"><i class="fa-solid fa-magnifying-glass"></i><input placeholder="Mahsulot, brend yoki kategoriya qidiring"></label>
+    <div class="header-actions">
+      <a class="icon-btn" href="{% url 'login' %}" title="Kabinet"><i class="fa-regular fa-user"></i></a>
+      <a class="icon-btn" href="{% url 'savatcha' %}" title="Savatcha"><i class="fa-solid fa-bag-shopping"></i></a>
+      <div class="icon-btn mobile-toggle" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></div>
+    </div>
+  </div>
+  <div class="container nav-row" id="nav-row">
+    <nav class="nav-links">
+      <a href="{% url 'index' %}" class="active">Bosh sahifa</a>
+      <a href="{% url 'mahsulotlar' %}">Mahsulotlar</a>
+      <a href="{% url 'blog' %}">Blog</a>
+      <a href="{% url 'biz-haqimizda' %}">Biz haqimizda</a>
+      <a href="{% url 'aloqa' %}">Aloqa</a>
+    </nav>
+    <div class="tag"><i class="fa-solid fa-truck-fast"></i> 1 kunda yetkazish</div>
+  </div>
+</header>
+
+<main class="page-section">
+<div class="container detail-shell">
+  <section class="gallery-card">
+    <div class="gallery-main"><img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1000&q=80" alt="iPhone 15 Pro" style="max-height:420px;object-fit:contain"></div>
+    <div class="mini-gallery"><div><img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=500&q=80" alt=""></div><div><img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80" alt=""></div><div><img src="https://images.unsplash.com/photo-1603898037225-1c09e6d1f0f4?auto=format&fit=crop&w=500&q=80" alt=""></div><div><img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=500&q=80" alt=""></div></div>
+  </section>
+  <section class="summary-card">
+    <span class="tag">Flagship smartphone</span>
+    <h1>Apple iPhone 15 Pro</h1>
+    <p class="muted">Titan korpus, A17 Pro chip, professional kamera va tezkor ishlash. Nexora bu sahifani minimal, katta bo‘shliq va aniq CTA bilan qurdi.</p>
+    <div class="summary-row"><span>Rang</span><strong>Natural Titanium</strong></div>
+    <div class="summary-row"><span>Xotira</span><strong>256 GB</strong></div>
+    <div class="summary-row"><span>Yetkazish</span><strong>Ertaga</strong></div>
+    <div style="display:flex;align-items:end;justify-content:space-between;gap:14px;padding:18px 0 6px"><div><div class="old-price">13 299 000 so'm</div><div class="price" style="font-size:2rem">12 499 000 so'm</div></div><div class="tag">4.9 ★ reyting</div></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px"><a href="savatcha.html" class="btn btn-primary" data-add-cart>Savatchaga qo‘shish</a><a href="checkout.html" class="btn btn-outline">Hozir sotib olish</a></div>
+  </section>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-shell">
+      <div>
+        <img src="{% static 'images/logo.svg' %}" alt="Nexora" style="height:38px;filter:brightness(0) invert(1)">
+        <p style="line-height:1.8;color:#cbd5e1;max-width:34ch">Nexora — zamonaviy online shopping uchun kuratsiya qilingan marketplace. Premium texnika, uy uchun buyumlar va kundalik essentials bitta joyda.</p>
+      </div>
+      <div>
+        <h4>Sahifalar</h4>
+        <div class="footer-links"><a href="mahsulotlar.html">Mahsulotlar</a><a href="blog.html">Blog</a><a href="biz-haqimizda.html">Biz haqimizda</a></div>
+      </div>
+      <div>
+        <h4>Xizmatlar</h4>
+        <div class="footer-links"><a href="savatcha.html">Savatcha</a><a href="checkout.html">Checkout</a><a href="aloqa.html">Aloqa</a></div>
+      </div>
+      <div>
+        <h4>Yangiliklar</h4>
+        <p style="color:#cbd5e1">Chegirmalar va yangi drop'lar haqida xabardor bo'ling.</p>
+        <div class="searchbar" style="display:flex;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)"><input placeholder="Email" style="color:white"><button class="btn btn-accent">Obuna</button></div>
+      </div>
+    </div>
+    <div class="footer-note">© 2026 Nexora Market. Barcha huquqlar himoyalangan.</div>
+  </div>
+</footer>
+<div id="toast-container" class="toast-container"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+<script src="{% static 'js/app.js' %}"></script>
+
+</body>
+</html>

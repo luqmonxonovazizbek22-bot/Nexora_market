@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexora Market - Register</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+  <div class="container topbar">
+    <div class="brand">
+      <a href="{% url 'index' %}">
+        <img src="{% static 'images/logo.svg' %}" alt="Nexora">
+      </a>
+    </div>
+
+      
+      
+      
+    <label class="searchbar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input placeholder="Mahsulot, brend yoki kategoriya qidiring">
+    </label>
+
+    <div class="header-actions">
+      <a class="icon-btn" href="{% url 'login' %}" title="Kabinet">
+        <i class="fa-regular fa-user"></i>
+      </a>
+      <a class="icon-btn" href="#" title="Savatcha">
+        <i class="fa-solid fa-bag-shopping"></i>
+      </a>
+      <div class="icon-btn mobile-toggle" id="mobile-menu-btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="container nav-row" id="nav-row">
+    <nav class="nav-links">
+      <a href="{% url 'index' %}" class="active">Bosh sahifa</a>
+      <a href="{% url 'mahsulotlar' %}">Mahsulotlar</a>
+      <a href="{% url 'blog' %}">Blog</a>
+      <a href="{% url 'biz-haqimizda' %}">Biz haqimizda</a>
+      <a href="{% url 'aloqa' %}">Aloqa</a>
+    </nav>
+    <div class="tag"><i class="fa-solid fa-truck-fast"></i> 1 kunda yetkazish</div>
+  </div>
+</header>
+
+<main class="page-section">
+<div class="center-narrow">
+    <section class="auth-shell">
+      
+        <form method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+
+            <div class="auth-side">
+                <div class="eyebrow" style="color:#fdba74">Nexora account</div>
+                <h1 style="font-size:2.6rem;line-height:1.05">Yangi account yarating</h1>
+                <p style="color:#cbd5e1;line-height:1.8">
+                Shopping, order tracking va personal tavsiyalar uchun hisobingizga kiring.
+                </p>
+            </div>
+
+            <div class="auth-form stack">
+
+            <h2 style="margin:0">Ro'yxatdan o'tish</h2>
+
+            <!-- 🔥 FIX 2: name lar to‘g‘ri -->
+            <input name="email" type="email" class="input" placeholder="Email">
+
+            <input name="password1" type="password" class="input" placeholder="Parol">
+
+            <!-- 🔥 FIX 3: MUHIM — password2 qo‘shildi -->
+            <input name="password2" type="password" class="input" placeholder="Parolni tasdiqlang">
+
+            <button type="submit" class="btn btn-primary">Davom etish</button>
+
+            <a class="muted" href="{% url 'login' %}">
+              Kirish sahifasi
+            </a>
+
+          </div>
+      </form>
+
+  </section>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-shell">
+      <div>
+        <img src="{% static 'images/logo.svg' %}" alt="Nexora" style="height:38px;filter:brightness(0) invert(1)">
+        <p style="line-height:1.8;color:#cbd5e1;max-width:34ch">
+          Nexora — zamonaviy online shopping.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+<script src="{% static 'js/app.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="520" viewBox="0 0 720 520" fill="none">
+<rect width="720" height="520" rx="36" fill="#FFF7ED"/>
+<rect x="46" y="46" width="280" height="180" rx="28" fill="#111827"/>
+<rect x="360" y="76" width="314" height="120" rx="28" fill="#FED7AA"/>
+<rect x="80" y="260" width="230" height="190" rx="26" fill="#F59E0B" fill-opacity="0.18"/>
+<rect x="348" y="232" width="330" height="220" rx="30" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+<circle cx="571" cy="152" r="42" fill="#111827"/>
+<circle cx="571" cy="152" r="16" fill="#F59E0B"/>
+<path d="M132 337C132 309.386 154.386 287 182 287H208C235.614 287 258 309.386 258 337V361C258 388.614 235.614 411 208 411H182C154.386 411 132 388.614 132 361V337Z" fill="#111827"/>
+<rect x="394" y="268" width="238" height="22" rx="11" fill="#E5E7EB"/>
+<rect x="394" y="304" width="184" height="16" rx="8" fill="#FDE68A"/>
+<rect x="394" y="334" width="136" height="16" rx="8" fill="#E5E7EB"/>
+<rect x="394" y="374" width="104" height="34" rx="17" fill="#111827"/>
+<text x="76" y="111" fill="#FFFFFF" font-size="34" font-family="Arial, sans-serif" font-weight="700">Curated</text>
+<text x="76" y="152" fill="#FFFFFF" font-size="34" font-family="Arial, sans-serif" font-weight="700">shopping</text>
+<text x="388" y="145" fill="#111827" font-size="30" font-family="Arial, sans-serif" font-weight="700">Nexora picks</text>
+</svg>
